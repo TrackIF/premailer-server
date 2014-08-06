@@ -44,4 +44,7 @@ class PremailerServer < Sinatra::Base
     data[:warnings] = premailer.warnings if with_warnings
     data.to_json
   end
+  get '/heartbeat' do
+    "Hello World!"
+  end
 end
