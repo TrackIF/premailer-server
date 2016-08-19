@@ -40,7 +40,7 @@ class PremailerServer < Sinatra::Base
     premailer = Premailer.new(html, PREMAILER_SETTINGS)
  
     content_type :json
-    data = {:html => premailer.to_inline_css}
+    data = {:html => premailer.to_inline_css, :txt => premailer.to_plain_text}
     data[:warnings] = premailer.warnings if with_warnings
     data.to_json
   end
